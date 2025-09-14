@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For .png format (modern browsers) -->
+    <link rel="icon" type="image/png" href="bar-icon.png" />
+    <title>Online Campus Market (OCM)</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header with Logo, Search, and Auth Buttons -->
+    <header>
+      <div class="logo-container">
+        <img src="RED-CONTENTS.png" width="110px" alt="" />
+      </div>
+
+      <div class="header-search">
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for items, categories, or sellers..."
+          />
+          <button class="search-btn">
+            <img src="search-icon.png" width="25" alt="Search" />
+          </button>
+        </div>
+      </div>
+
+      <div class="auth-buttons">
+        <button class="btn btn-login" id="loginBtn">Login</button>
+        <button class="btn btn-signup" id="signupBtn">Sign Up</button>
+      </div>
+    </header>
+
+    <!-- Categories Section -->
+    <div class="categories">
+      <div class="categories-container">
+        <h3 class="categories-title">Browse Categories</h3>
+        <ul class="categories-list">
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="category-name">Electronics</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="category-name">Textbooks</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-tshirt"></i>
+            </div>
+            <div class="category-name">Clothing</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <div class="category-name">Computers</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-couch"></i>
+            </div>
+            <div class="category-name">Furniture</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="category-name">Gaming</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-football-ball"></i>
+            </div>
+            <div class="category-name">Sports</div>
+          </li>
+          <li class="category-item">
+            <div class="category-icon">
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+            <div class="category-name">Other</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h2 class="section-title">Featured Items</h2>
+      <div class="products-grid" id="productsGrid">
+        <!-- Product cards will be generated here -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Campus Online Market (COM). All rights reserved.</p>
+      <p>Designed for students, by theunknowntech.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="modal-title">Login to Your Account</h2>
+        <div class="user-type-selector">
+          <div class="user-type-btn active" data-type="buyer">Buyer</div>
+          <div class="user-type-btn" data-type="seller">Seller</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email</label>
+          <input
+            type="email"
+            class="form-input"
+            id="loginEmail"
+            placeholder="Your email address"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input
+            type="password"
+            class="form-input"
+            id="loginPassword"
+            placeholder="Your password"
+          />
+        </div>
+        <div class="terms">
+          <input type="checkbox" id="rememberMe" />
+          <label for="rememberMe">Remember me</label>
+        </div>
+        <div class="captcha">7G4H9K</div>
+        <button class="submit-btn">Login</button>
+        <p style="text-align: center; margin-top: 15px">
+          <a href="#" style="color: var(--coral)">Forgot your password?</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 class="modal-title">Create an Account</h2>
+        <div class="user-type-selector">
+          <div class="user-type-btn active" data-type="buyer">Buyer</div>
+          <div class="user-type-btn" data-type="seller">Seller</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full Name</label>
+          <input
+            type="text"
+            class="form-input"
+            id="signupName"
+            placeholder="Your full name"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">Email</label>
+          <input
+            type="email"
+            class="form-input"
+            id="signupEmail"
+            placeholder="Your email address"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signupPassword">Password</label>
+          <input
+            type="password"
+            class="form-input"
+            id="signupPassword"
+            placeholder="Create a password"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="confirmPassword"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-input"
+            id="confirmPassword"
+            placeholder="Confirm your password"
+          />
+        </div>
+        <div class="terms">
+          <input type="checkbox" id="agreeTerms" />
+          <label for="agreeTerms"
+            >I agree to the
+            <a href="#" style="color: var(--coral)"
+              >Terms and Conditions</a
+            ></label
+          >
+        </div>
+        <div class="captcha">A3B7C2</div>
+        <button class="submit-btn">Create Account</button>
+      </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="modal" id="chatModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="chat-header">
+          <img
+            src=""
+            alt="Seller Avatar"
+            class="seller-avatar"
+            id="chatSellerAvatar"
+          />
+          <div>
+            <div class="seller-name" id="chatSellerName">John Doe</div>
+            <div class="seller-rating">★★★★☆</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <!-- Chat messages will be added here -->
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            id="chatInput"
+          />
+          <button class="chat-send" id="chatSend">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
