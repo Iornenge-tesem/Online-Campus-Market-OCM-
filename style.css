@@ -45,19 +45,25 @@ header {
 
 .logo-container img {
   border-radius: 4px;
-    width: 150px;
+    width: 100px;
 }
 
 /* Search Bar in Header */
 .header-search {
   flex: 2;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 20px;
 }
-
+#small-input{
+  display: none;
+}
+#small-btn{
+  display: none;
+}
 .search-bar {
   display: flex;
   width: 80%;
+  height: 45px;
 }
 
 .search-input {
@@ -69,10 +75,14 @@ header {
 }
 
 .search-btn {
-  padding: 5px 15px;
+  padding: 5px 5px;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
+}
+.search-btn img{
+  height: 25px;
+  width: 25px;
 }
 
 .auth-buttons {
@@ -494,6 +504,12 @@ footer {
   .btn {
   padding: 8px 10px;
   font-weight: 600;
+}
+#small-input{
+  display: block;
+}
+#small-btn{
+  display: block;
 }
 .search-input{
  display: none;
